@@ -1,0 +1,18 @@
+<div data-view="plugins/messageBox" class="BS3messageBox">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Color</h4>
+            </div>
+            <div class="modal-body">
+                <form data-bind="submit: ok">
+                    <p class="message">What is your favorite color?</p>
+                    <input data-bind="value: input, valueUpdate: 'afterkeydown'" class="autofocus"/>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-bind="click: ok">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

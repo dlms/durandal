@@ -1,0 +1,27 @@
+﻿<div class="container knockout-samples">
+  <div class="row">
+    <div class="col-md-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">Basic Examples</div>
+            <div class="panel-body">
+                <!--ko foreach: introSamples-->
+                <p data-bind="css: { active: isActive }">
+                    <a data-bind="attr: { href: hash }, text: title"></a>
+                </p>
+                <!--/ko-->
+            </div>
+            <div class="panel-heading">Detailed Examples</div>
+            <div class="panel-body">
+                <!--ko foreach: detailedSamples-->
+                <p data-bind="css: { active: isActive }">
+                    <a data-bind="attr: { href: hash }, text: title"></a>
+                </p>
+                <!--/ko-->
+            </div>
+        </div>
+    </div>
+      <div class="col-md-10">
+          <!--ko router: { transition:'entrance', cacheViews:true }--><!--/ko-->
+      </div>
+  </div>
+</div>

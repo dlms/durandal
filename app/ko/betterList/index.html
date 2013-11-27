@@ -1,0 +1,23 @@
+﻿<div>
+    <h2>Better List</h2>
+    <div class="well well-lg liveExample">
+        <form data-bind="submit: addItem">
+            <label>Add item:</label>
+            <div class="input-append">
+                <input class="col-md-3" data-bind='value: itemToAdd, valueUpdate: "afterkeydown"' />
+                <button class="btn btn-primary"  type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
+            </div>
+            <br />
+            <div>
+                <p>Your values:</p>
+                <select class="col-md-3" multiple="multiple" size="6" data-bind="options: allItems, selectedOptions: selectedItems"></select>
+            </div> 
+            <div class="col-md-2">
+                <div class="pull-right">
+                    <button class="btn btn-primary"  data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
+                    <button class="btn btn-primary"  data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
