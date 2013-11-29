@@ -8,10 +8,12 @@
  */
 var ENVIRONMENT = 'development';
 var software_version = '0.0.1';
+var default_language = 'hu_HU';
 
 requirejs.config({
     urlArgs: (ENVIRONMENT == 'development' ? "bust=" +  (new Date()).getTime() : "version="+software_version), 
     paths: {
+        'dictionary': '../lib/language/'+default_language+'/dictionary',
         'text': '../lib/require/text',
         'durandal':'../lib/durandal/js',
         'plugins' : '../lib/durandal/js/plugins',
@@ -28,12 +30,12 @@ requirejs.config({
     }
 });
 
-define(['durandal/system', 'durandal/app', 'durandal/viewLocator','jquery', 'bootstrap'],  function (system, app, viewLocator, $, ko) {
+define(['durandal/system', 'durandal/app', 'durandal/viewLocator','jquery', 'bootstrap', 'dictionary'],  function (system, app, viewLocator, $, b) {
     //>>excludeStart("build", true);
-    system.debug(true);
+    system.debug(false);
     //>>excludeEnd("build");
-
-    app.title = 'Durandal Samples';
+    
+    app.title = dict.get('title');
 
     //specify which plugins to install and their configuration
     app.configurePlugins({
