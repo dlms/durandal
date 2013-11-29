@@ -1,4 +1,16 @@
-﻿requirejs.config({
+/*
+ * 
+ * ENVIRONMENT:
+ * - development
+ * - testing
+ * - production
+ * 
+ */
+var ENVIRONMENT = 'development';
+var software_version = '0.0.1';
+
+requirejs.config({
+    urlArgs: (ENVIRONMENT == 'development' ? "bust=" +  (new Date()).getTime() : "version="+software_version), 
     paths: {
         'text': '../lib/require/text',
         'durandal':'../lib/durandal/js',
@@ -6,7 +18,7 @@
         'transitions' : '../lib/durandal/js/transitions',
         'knockout': '../lib/knockout/knockout-2.3.0',
         'bootstrap': '../lib/bootstrap/js/bootstrap',
-        'jquery': '../lib/jquery/jquery-1.9.1'
+        'jquery': '../lib/jquery/jquery-2.0.3.min'
     },
     shim: {
         'bootstrap': {
